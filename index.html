@@ -4,23 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Martin Choi | Developer Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #07111f;
-      --bg-deep: #030813;
-      --panel: rgba(10, 24, 43, 0.72);
-      --panel-strong: rgba(10, 24, 43, 0.9);
-      --line: rgba(92, 224, 255, 0.18);
-      --line-strong: rgba(92, 224, 255, 0.45);
-      --text: #f2f7ff;
-      --muted: #99aac2;
-      --accent: #58ddff;
-      --accent-strong: #0fb7ff;
-      --accent-soft: rgba(88, 221, 255, 0.14);
-      --secondary: #b7ff64;
-      --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
-      --radius: 24px;
-      --container: 1180px;
+      --bg: #040705;
+      --bg-soft: #08100a;
+      --panel: rgba(11, 18, 14, 0.9);
+      --panel-soft: rgba(14, 23, 18, 0.72);
+      --panel-glow: rgba(23, 39, 30, 0.9);
+      --line: rgba(94, 131, 104, 0.22);
+      --line-strong: rgba(106, 224, 157, 0.34);
+      --text: #edf4ee;
+      --muted: #92a596;
+      --accent: #43d985;
+      --accent-soft: #8cf3bc;
+      --accent-deep: #173723;
+      --card-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
+      --radius-xl: 34px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --container: 1220px;
     }
 
     * {
@@ -33,12 +38,12 @@
 
     body {
       margin: 0;
-      font-family: "Segoe UI Variable", "Noto Sans KR", "Malgun Gothic", sans-serif;
+      font-family: "Noto Sans KR", "Noto Sans", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(15, 183, 255, 0.18), transparent 28%),
-        radial-gradient(circle at 85% 15%, rgba(183, 255, 100, 0.12), transparent 18%),
-        linear-gradient(180deg, #091426 0%, #050c18 55%, #040810 100%);
+        radial-gradient(circle at top center, rgba(67, 217, 133, 0.12), transparent 24%),
+        radial-gradient(circle at 78% 10%, rgba(67, 217, 133, 0.08), transparent 18%),
+        linear-gradient(180deg, #050806 0%, #050806 100%);
       min-height: 100vh;
       overflow-x: hidden;
     }
@@ -48,10 +53,10 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(88, 221, 255, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(88, 221, 255, 0.06) 1px, transparent 1px);
-      background-size: 44px 44px;
-      mask-image: radial-gradient(circle at center, black 45%, transparent 95%);
+        linear-gradient(rgba(67, 217, 133, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(67, 217, 133, 0.05) 1px, transparent 1px);
+      background-size: 48px 48px;
+      opacity: 0.28;
       pointer-events: none;
       z-index: -2;
     }
@@ -61,9 +66,8 @@
       position: fixed;
       inset: 0;
       background:
-        radial-gradient(circle at 20% 25%, rgba(88, 221, 255, 0.08), transparent 16%),
-        radial-gradient(circle at 76% 35%, rgba(88, 221, 255, 0.07), transparent 15%),
-        radial-gradient(circle at 65% 72%, rgba(183, 255, 100, 0.06), transparent 18%);
+        radial-gradient(circle at 18% 22%, rgba(67, 217, 133, 0.11), transparent 12%),
+        radial-gradient(circle at 82% 16%, rgba(67, 217, 133, 0.08), transparent 15%);
       pointer-events: none;
       z-index: -1;
     }
@@ -71,49 +75,6 @@
     a {
       color: inherit;
       text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(var(--container), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 110px 0;
-      position: relative;
-    }
-
-    .section-header {
-      max-width: 720px;
-      margin-bottom: 38px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 8px 14px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(8, 20, 36, 0.58);
-      color: var(--accent);
-      font-size: 0.82rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--secondary);
-      box-shadow: 0 0 18px rgba(183, 255, 100, 0.9);
     }
 
     h1,
@@ -124,67 +85,137 @@
     }
 
     h1 {
-      font-size: clamp(2.05rem, 4.6vw, 4.1rem);
-      line-height: 1.02;
-      letter-spacing: -0.05em;
+      font-size: clamp(2rem, 4vw, 3.85rem);
+      line-height: 1.06;
+      letter-spacing: -0.045em;
+      max-width: 9.5em;
     }
 
     h2 {
-      font-size: clamp(1.5rem, 2.2vw, 2.05rem);
-      margin-top: 18px;
-      line-height: 1.2;
+      margin-top: 16px;
+      font-size: clamp(1.42rem, 2vw, 2rem);
+      line-height: 1.34;
+      letter-spacing: -0.03em;
     }
 
     h3 {
-      font-size: clamp(0.95rem, 1.2vw, 1.04rem);
-      line-height: 1.45;
+      font-size: clamp(0.98rem, 1.18vw, 1.08rem);
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 104px 0;
+      position: relative;
+    }
+
+    .section-header {
+      max-width: 740px;
+      margin-bottom: 34px;
     }
 
     .lead {
-      margin-top: 22px;
+      margin-top: 18px;
       color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.8;
+      font-size: 1rem;
+      line-height: 1.9;
     }
 
-    .nav {
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(106, 224, 157, 0.16);
+      background: rgba(12, 19, 15, 0.9);
+      color: var(--accent-soft);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(67, 217, 133, 0.75);
+    }
+
+    .nav-wrap {
       position: sticky;
       top: 0;
       z-index: 20;
-      backdrop-filter: blur(16px);
-      background: rgba(4, 10, 20, 0.68);
-      border-bottom: 1px solid rgba(92, 224, 255, 0.08);
+      padding-top: 14px;
+      backdrop-filter: blur(10px);
     }
 
-    .nav-inner {
-      min-height: 74px;
+    .nav {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 20px;
+      min-height: 72px;
+      padding: 0 22px;
+      border: 1px solid rgba(106, 224, 157, 0.14);
+      border-radius: 20px;
+      background: rgba(7, 11, 8, 0.82);
+      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
     }
 
     .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
       font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      position: relative;
+      width: 20px;
+      height: 20px;
+    }
+
+    .brand-mark::before,
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      inset: 2px;
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      transform: rotate(45deg);
+    }
+
+    .brand-mark::after {
+      inset: 6px;
+      border-color: rgba(140, 243, 188, 0.9);
     }
 
     .brand span {
-      color: var(--accent);
+      color: var(--accent-soft);
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      gap: 22px;
       flex-wrap: wrap;
     }
 
     .nav-links a {
       color: var(--muted);
-      font-size: 0.95rem;
-      transition: color 0.25s ease;
+      font-size: 0.94rem;
+      transition: color 0.24s ease;
     }
 
     .nav-links a:hover {
@@ -192,44 +223,67 @@
     }
 
     .hero {
-      padding: 80px 0 110px;
+      padding: 30px 0 0;
+    }
+
+    .hero-shell {
+      position: relative;
+      padding: 54px;
+      border-radius: 38px;
+      border: 1px solid rgba(106, 224, 157, 0.16);
+      background:
+        linear-gradient(180deg, rgba(10, 16, 12, 0.94), rgba(8, 13, 10, 0.96)),
+        var(--panel);
+      box-shadow: var(--card-shadow);
+      overflow: hidden;
+    }
+
+    .hero-shell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 20% 12%, rgba(67, 217, 133, 0.13), transparent 24%),
+        linear-gradient(120deg, rgba(67, 217, 133, 0.08), transparent 30%, transparent 70%, rgba(67, 217, 133, 0.05));
+      pointer-events: none;
+    }
+
+    .hero-shell::after {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border-radius: 28px;
+      border: 1px solid rgba(106, 224, 157, 0.06);
+      pointer-events: none;
     }
 
     .hero-grid {
+      position: relative;
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.9fr);
-      gap: 36px;
+      grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.95fr);
+      gap: 28px;
       align-items: center;
+      z-index: 1;
     }
 
     .hero-copy {
-      position: relative;
-    }
-
-    .hero-copy::before {
-      content: "";
-      position: absolute;
-      left: -20px;
-      top: -20px;
-      width: 140px;
-      height: 140px;
-      background: radial-gradient(circle, rgba(88, 221, 255, 0.18), transparent 68%);
-      z-index: -1;
+      max-width: 620px;
     }
 
     .hero-kicker {
-      margin-top: 18px;
       display: block;
-      font-size: clamp(1.15rem, 2.2vw, 1.5rem);
-      color: #d8ebff;
+      margin-top: 18px;
+      color: #d9e6dc;
+      font-size: clamp(1.02rem, 1.6vw, 1.26rem);
+      line-height: 1.7;
     }
 
     .hero-description {
-      max-width: 700px;
-      margin-top: 24px;
+      margin-top: 22px;
+      max-width: 580px;
       color: var(--muted);
-      font-size: 1.08rem;
-      line-height: 1.9;
+      font-size: 1rem;
+      line-height: 1.92;
     }
 
     .role-tags,
@@ -240,44 +294,46 @@
     }
 
     .role-tags {
-      margin-top: 30px;
+      margin-top: 28px;
     }
 
     .tag {
-      padding: 11px 16px;
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 15px;
       border-radius: 999px;
-      border: 1px solid rgba(92, 224, 255, 0.18);
-      background: rgba(10, 21, 38, 0.74);
-      color: #dceeff;
-      font-size: 0.92rem;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(106, 224, 157, 0.15);
+      background: rgba(14, 22, 17, 0.86);
+      color: #dce8de;
+      font-size: 0.9rem;
     }
 
     .stack-tags .tag {
-      background: rgba(7, 17, 31, 0.88);
-      color: #cbe8ff;
+      background: rgba(10, 15, 12, 0.9);
     }
 
     .cta-row {
-      margin-top: 36px;
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
+      margin-top: 32px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 52px;
+      min-height: 50px;
       padding: 0 22px;
       border-radius: 14px;
       border: 1px solid transparent;
+      font-size: 0.96rem;
+      font-weight: 600;
       transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease,
-        background 0.25s ease;
+        transform 0.24s ease,
+        box-shadow 0.24s ease,
+        border-color 0.24s ease,
+        background 0.24s ease;
     }
 
     .button:hover {
@@ -285,216 +341,230 @@
     }
 
     .button-primary {
-      background: linear-gradient(135deg, rgba(15, 183, 255, 0.95), rgba(88, 221, 255, 0.72));
-      color: #04101c;
-      box-shadow: 0 16px 40px rgba(15, 183, 255, 0.24);
-    }
-
-    .button-primary:hover {
-      box-shadow: 0 20px 52px rgba(15, 183, 255, 0.32);
+      background: linear-gradient(135deg, #6ef0a7, #39c878);
+      color: #061109;
+      box-shadow: 0 18px 42px rgba(67, 217, 133, 0.22);
     }
 
     .button-secondary {
-      border-color: var(--line-strong);
-      background: rgba(8, 20, 36, 0.48);
+      border-color: rgba(106, 224, 157, 0.18);
+      background: rgba(13, 20, 16, 0.88);
       color: var(--text);
     }
 
-    .button-secondary:hover {
-      background: rgba(11, 28, 48, 0.78);
-      box-shadow: 0 14px 38px rgba(0, 0, 0, 0.3);
-    }
-
-    .dashboard {
+    .hero-visual {
       position: relative;
-      padding: 24px;
-      border-radius: calc(var(--radius) + 4px);
+      min-height: 470px;
+      border-radius: 30px;
+      border: 1px solid rgba(106, 224, 157, 0.12);
       background:
-        linear-gradient(180deg, rgba(12, 28, 48, 0.96), rgba(8, 17, 30, 0.88)),
-        rgba(8, 17, 30, 0.84);
-      border: 1px solid rgba(92, 224, 255, 0.22);
-      box-shadow: var(--shadow);
+        radial-gradient(circle at 50% 50%, rgba(67, 217, 133, 0.08), transparent 40%),
+        linear-gradient(180deg, rgba(11, 18, 14, 0.72), rgba(8, 13, 10, 0.96));
       overflow: hidden;
     }
 
-    .dashboard::before {
+    .hero-visual::before {
       content: "";
+      position: absolute;
+      inset: 28px;
+      border-radius: 26px;
+      border: 1px solid rgba(106, 224, 157, 0.08);
+    }
+
+    .grid-fade {
       position: absolute;
       inset: 0;
-      background: linear-gradient(130deg, rgba(88, 221, 255, 0.1), transparent 30%, transparent 70%, rgba(183, 255, 100, 0.08));
-      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(67, 217, 133, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(67, 217, 133, 0.06) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: radial-gradient(circle at center, black 54%, transparent 92%);
+      opacity: 0.75;
     }
 
-    .dashboard-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 22px;
+    .shape-ring {
+      position: absolute;
+      top: 52px;
+      right: 54px;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 16px solid rgba(54, 97, 68, 0.36);
+      box-shadow:
+        inset 0 0 0 1px rgba(140, 243, 188, 0.15),
+        0 24px 50px rgba(0, 0, 0, 0.32);
     }
 
-    .status-pill {
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(183, 255, 100, 0.12);
-      border: 1px solid rgba(183, 255, 100, 0.24);
-      color: var(--secondary);
-      font-size: 0.85rem;
-    }
-
-    .arch-grid {
-      position: relative;
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 16px;
-    }
-
-    .arch-grid::before,
-    .arch-grid::after {
+    .shape-ring::after {
       content: "";
       position: absolute;
-      background: linear-gradient(90deg, transparent, rgba(88, 221, 255, 0.3), transparent);
-      pointer-events: none;
+      inset: 18px;
+      border-radius: 50%;
+      border: 2px solid rgba(140, 243, 188, 0.24);
     }
 
-    .arch-grid::before {
-      left: 20%;
-      right: 20%;
-      top: 50%;
-      height: 1px;
+    .shape-hex {
+      position: absolute;
+      top: 112px;
+      left: 58%;
+      width: 190px;
+      height: 220px;
+      transform: translateX(-50%);
+      clip-path: polygon(26% 0, 74% 0, 100% 50%, 74% 100%, 26% 100%, 0 50%);
+      background:
+        linear-gradient(180deg, rgba(17, 28, 21, 0.68), rgba(8, 12, 9, 0.96)),
+        var(--panel-glow);
+      border: 1px solid rgba(106, 224, 157, 0.12);
+      box-shadow:
+        inset -18px -18px 40px rgba(0, 0, 0, 0.38),
+        inset 18px 18px 40px rgba(67, 217, 133, 0.08),
+        0 40px 70px rgba(0, 0, 0, 0.42);
     }
 
-    .arch-grid::after {
-      top: 14%;
-      bottom: 14%;
-      left: 50%;
-      width: 1px;
-      background: linear-gradient(180deg, transparent, rgba(88, 221, 255, 0.3), transparent);
+    .shape-hex::before {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      clip-path: inherit;
+      background: linear-gradient(180deg, rgba(12, 21, 16, 0.95), rgba(7, 10, 8, 0.92));
+      border: 1px solid rgba(106, 224, 157, 0.12);
     }
 
-    .arch-card {
-      position: relative;
-      min-height: 118px;
-      padding: 18px;
-      border-radius: 20px;
-      background: rgba(7, 17, 31, 0.8);
-      border: 1px solid rgba(92, 224, 255, 0.16);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+    .shape-coin {
+      position: absolute;
+      left: 96px;
+      top: 88px;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.15), transparent 30%),
+        linear-gradient(145deg, #11231a, #060907 70%);
+      border: 1px solid rgba(106, 224, 157, 0.2);
+      box-shadow:
+        inset 0 0 0 12px rgba(21, 36, 27, 0.9),
+        0 30px 55px rgba(0, 0, 0, 0.36);
     }
 
-    .arch-card:hover,
-    .card:hover,
-    .timeline-item:hover,
-    .mindset-item:hover,
-    .contact-card:hover,
-    .philosophy-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(92, 224, 255, 0.42);
-      box-shadow: 0 18px 46px rgba(0, 0, 0, 0.32);
+    .shape-coin::before {
+      content: "ERP";
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      color: var(--accent-soft);
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
     }
 
-    .arch-card small,
+    .visual-card {
+      position: absolute;
+      padding: 16px 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(106, 224, 157, 0.12);
+      background: rgba(9, 15, 11, 0.88);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
+      backdrop-filter: blur(10px);
+    }
+
+    .visual-card small,
     .meta {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.14em;
+      color: var(--accent-soft);
       font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
     }
 
-    .arch-card p,
+    .visual-card p,
     .card p,
     .timeline-item p,
     .mindset-item p,
     .contact-card p,
     .philosophy-card p {
-      margin-top: 12px;
+      margin-top: 10px;
       color: var(--muted);
-      line-height: 1.75;
-      font-size: 0.98rem;
+      font-size: 0.95rem;
+      line-height: 1.78;
     }
 
-    .stats-row {
-      margin-top: 18px;
+    .visual-card.top-left {
+      left: 34px;
+      top: 210px;
+      max-width: 190px;
+    }
+
+    .visual-card.top-right {
+      right: 34px;
+      top: 178px;
+      max-width: 176px;
+    }
+
+    .visual-card.bottom {
+      left: 40px;
+      right: 40px;
+      bottom: 38px;
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
-    }
-
-    .stat-box {
       padding: 14px;
-      border-radius: 16px;
-      background: rgba(4, 11, 20, 0.7);
-      border: 1px solid rgba(92, 224, 255, 0.12);
     }
 
-    .stat-value {
-      color: var(--secondary);
-      font-size: 1.45rem;
-      font-weight: 700;
-    }
-
-    .stat-label {
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 0.86rem;
-    }
-
-    .card-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .card,
-    .timeline-item,
-    .mindset-item,
-    .contact-card,
-    .philosophy-card {
-      padding: 28px;
-      background: var(--panel);
-      border: 1px solid rgba(92, 224, 255, 0.14);
-      border-radius: var(--radius);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
-      transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
-    }
-
-    .card-number,
-    .philosophy-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
+    .mini-metric {
+      padding: 14px;
       border-radius: 14px;
-      margin-bottom: 18px;
-      color: var(--bg);
-      background: linear-gradient(135deg, var(--secondary), #d6ff9b);
-      font-weight: 800;
+      background: rgba(14, 22, 17, 0.9);
+      border: 1px solid rgba(106, 224, 157, 0.1);
     }
 
-    .about-layout {
+    .mini-metric strong {
+      display: block;
+      margin-top: 8px;
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .insight-strip {
+      position: relative;
+      z-index: 1;
       display: grid;
-      grid-template-columns: minmax(0, 1.3fr) minmax(280px, 0.7fr);
-      gap: 20px;
-      align-items: start;
+      grid-template-columns: 1.25fr repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+      padding: 14px;
+      border-radius: 22px;
+      border: 1px solid rgba(106, 224, 157, 0.12);
+      background: rgba(9, 14, 11, 0.9);
     }
 
-    .about-note {
-      padding: 24px;
-      border-radius: var(--radius);
-      background: rgba(6, 16, 29, 0.78);
-      border: 1px solid rgba(92, 224, 255, 0.14);
+    .strip-intro,
+    .strip-card {
+      min-height: 88px;
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: rgba(14, 22, 17, 0.92);
+      border: 1px solid rgba(106, 224, 157, 0.1);
     }
 
-    .about-note ul {
-      margin: 18px 0 0;
-      padding-left: 18px;
+    .strip-intro p,
+    .strip-card p {
+      margin-top: 8px;
       color: var(--muted);
-      line-height: 1.9;
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
 
+    .strip-card strong {
+      display: block;
+      margin-top: 14px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--accent-soft);
+    }
+
+    .card-grid,
     .philosophy-grid,
     .mindset-grid,
     .contact-grid {
@@ -509,19 +579,91 @@
       gap: 18px;
     }
 
-    .timeline-item {
-      position: relative;
-      overflow: hidden;
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      gap: 18px;
     }
 
-    .timeline-item::before {
+    .card,
+    .timeline-item,
+    .mindset-item,
+    .contact-card,
+    .philosophy-card,
+    .about-note {
+      position: relative;
+      padding: 26px;
+      border-radius: 24px;
+      border: 1px solid rgba(106, 224, 157, 0.12);
+      background:
+        linear-gradient(180deg, rgba(13, 20, 16, 0.92), rgba(9, 14, 11, 0.96)),
+        var(--panel);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
+      overflow: hidden;
+      transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+    }
+
+    .card::before,
+    .timeline-item::before,
+    .mindset-item::before,
+    .contact-card::before,
+    .philosophy-card::before,
+    .about-note::before {
       content: "";
       position: absolute;
-      top: 0;
+      inset: auto -40px -40px auto;
+      width: 120px;
+      height: 120px;
+      background: radial-gradient(circle, rgba(67, 217, 133, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .card:hover,
+    .timeline-item:hover,
+    .mindset-item:hover,
+    .contact-card:hover,
+    .philosophy-card:hover,
+    .about-note:hover {
+      transform: translateY(-6px);
+      border-color: rgba(106, 224, 157, 0.26);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
+    }
+
+    .card-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .card-number,
+    .philosophy-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 12px;
+      background: linear-gradient(145deg, #52ee99, #2fbe6d);
+      color: #071109;
+      font-size: 0.94rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .about-note ul {
+      margin: 16px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .timeline-item::after {
+      content: "";
+      position: absolute;
       left: 0;
-      width: 4px;
-      height: 100%;
-      background: linear-gradient(180deg, var(--accent), rgba(183, 255, 100, 0.6));
+      top: 22px;
+      bottom: 22px;
+      width: 3px;
+      border-radius: 999px;
+      background: linear-gradient(180deg, var(--accent), rgba(67, 217, 133, 0.04));
     }
 
     .contact-card strong {
@@ -529,18 +671,19 @@
       margin-top: 16px;
       color: var(--text);
       font-size: 1rem;
+      font-weight: 600;
     }
 
     .footer {
       padding: 28px 0 42px;
-      color: rgba(153, 170, 194, 0.8);
-      font-size: 0.92rem;
+      color: rgba(146, 165, 150, 0.88);
+      font-size: 0.9rem;
       text-align: center;
     }
 
     .reveal {
       opacity: 0;
-      transform: translateY(26px);
+      transform: translateY(24px);
       transition: opacity 0.65s ease, transform 0.65s ease;
     }
 
@@ -549,25 +692,33 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 1100px) {
+    @media (max-width: 1120px) {
       .hero-grid,
       .about-layout,
       .card-grid,
       .philosophy-grid,
-      .timeline,
       .mindset-grid,
-      .contact-grid {
+      .contact-grid,
+      .timeline {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .hero-grid {
         grid-template-columns: 1fr;
       }
+
+      .insight-strip {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .strip-intro {
+        grid-column: 1 / -1;
+      }
     }
 
     @media (max-width: 760px) {
-      .nav-inner {
-        padding: 14px 0;
+      .nav {
+        padding: 18px;
         align-items: flex-start;
         flex-direction: column;
       }
@@ -577,148 +728,172 @@
       }
 
       .section {
-        padding: 88px 0;
+        padding: 84px 0;
       }
 
-      .hero {
-        padding-top: 56px;
+      .hero-shell {
+        padding: 28px;
+        border-radius: 28px;
       }
 
       .hero-grid,
       .about-layout,
       .card-grid,
       .philosophy-grid,
-      .timeline,
       .mindset-grid,
       .contact-grid,
-      .stats-row,
-      .arch-grid {
+      .timeline,
+      .insight-strip,
+      .visual-card.bottom {
         grid-template-columns: 1fr;
       }
 
-      .arch-grid::before,
-      .arch-grid::after {
-        display: none;
+      .hero-visual {
+        min-height: 560px;
       }
 
-      .dashboard {
-        padding: 20px;
+      .shape-ring {
+        width: 96px;
+        height: 96px;
+        right: 28px;
       }
 
-      .card,
-      .timeline-item,
-      .mindset-item,
-      .contact-card,
-      .philosophy-card {
-        padding: 24px;
+      .shape-hex {
+        width: 160px;
+        height: 190px;
+        top: 132px;
+        left: 54%;
+      }
+
+      .shape-coin {
+        left: 28px;
+        top: 80px;
+        width: 82px;
+        height: 82px;
+      }
+
+      .visual-card.top-left {
+        left: 22px;
+        right: 120px;
+        top: 210px;
+      }
+
+      .visual-card.top-right {
+        left: 120px;
+        right: 22px;
+        top: 132px;
+      }
+
+      .visual-card.bottom {
+        left: 22px;
+        right: 22px;
+        bottom: 22px;
       }
     }
   </style>
 </head>
 <body>
-  <nav class="nav">
-    <div class="container nav-inner">
-      <a class="brand" href="#top">Martin <span>Choi</span></a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#stack">Stack</a>
-        <a href="#direction">Direction</a>
-        <a href="#contact">Contact</a>
-      </div>
+  <div class="nav-wrap">
+    <div class="container">
+      <nav class="nav">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"></span>
+          Martin <span>Choi</span>
+        </a>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#expertise">Expertise</a>
+          <a href="#stack">Stack</a>
+          <a href="#direction">Direction</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
     </div>
-  </nav>
+  </div>
 
   <main id="top">
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-copy reveal">
-          <span class="eyebrow">Developer Portfolio</span>
-          <h1>I build systems that connect business, data, and visual intelligence.</h1>
-          <span class="hero-kicker">비즈니스, 데이터, 시각화를 연결하는 실무형 개발자</span>
-          <p class="hero-description">
-            웹 ERP, 데이터베이스, 그래픽 분석 프로그램을 중심으로 업무 프로세스를 구조화하고,
-            데이터를 이해 가능한 시스템으로 전환하는 개발자입니다.
-          </p>
-          <div class="role-tags">
-            <span class="tag">Web ERP Developer</span>
-            <span class="tag">Database Engineer</span>
-            <span class="tag">Graphic Analysis Developer</span>
-            <span class="tag">ENTJ Builder</span>
-          </div>
-          <div class="cta-row">
-            <a class="button button-primary" href="#expertise">View Expertise</a>
-            <a class="button button-secondary" href="#contact">Contact Me</a>
-          </div>
-        </div>
-
-        <div class="dashboard reveal">
-          <div class="dashboard-top">
-            <div>
-              <div class="meta">System Architecture</div>
-              <h3>Operational Software Blueprint</h3>
-            </div>
-            <span class="status-pill">Live Thinking</span>
-          </div>
-
-          <div class="arch-grid">
-            <article class="arch-card">
-              <small>01</small>
-              <div>
-                <h3>ERP Module</h3>
-                <p>입출고, 재고, 물류, 업무 흐름을 실제 운영 기준으로 구조화합니다.</p>
+      <div class="container">
+        <div class="hero-shell">
+          <div class="hero-grid">
+            <div class="hero-copy reveal">
+              <span class="eyebrow">Developer Portfolio</span>
+              <h1>I build systems that connect business, data, and visual intelligence.</h1>
+              <span class="hero-kicker">비즈니스, 데이터, 시각화를 연결하는 실무형 개발자</span>
+              <p class="hero-description">
+                웹 ERP, 데이터베이스, 그래픽 분석 프로그램을 중심으로 업무 프로세스를 구조화하고,
+                데이터를 이해 가능한 시스템으로 전환하는 개발자입니다.
+              </p>
+              <div class="role-tags">
+                <span class="tag">Web ERP Developer</span>
+                <span class="tag">Database Engineer</span>
+                <span class="tag">Graphic Analysis Developer</span>
+                <span class="tag">ENTJ Builder</span>
               </div>
-            </article>
-            <article class="arch-card">
-              <small>02</small>
-              <div>
-                <h3>Database Layer</h3>
+              <div class="cta-row">
+                <a class="button button-primary" href="#expertise">View Expertise</a>
+                <a class="button button-secondary" href="#contact">Contact Me</a>
+              </div>
+            </div>
+
+            <div class="hero-visual reveal" aria-hidden="true">
+              <div class="grid-fade"></div>
+              <div class="shape-ring"></div>
+              <div class="shape-hex"></div>
+              <div class="shape-coin"></div>
+
+              <article class="visual-card top-left">
+                <small>Database Layer</small>
                 <p>업무 데이터를 안정적으로 저장하고 분석 가능한 구조로 설계합니다.</p>
-              </div>
-            </article>
-            <article class="arch-card">
-              <small>03</small>
-              <div>
-                <h3>Analytics Engine</h3>
-                <p>시계열 데이터와 상태 정보를 분석 가능한 형태로 가공합니다.</p>
-              </div>
-            </article>
-            <article class="arch-card">
-              <small>04</small>
-              <div>
-                <h3>Visualization UI</h3>
-                <p>대시보드와 그래픽 기반 도구로 시스템 상태를 직관적으로 전달합니다.</p>
-              </div>
-            </article>
-            <article class="arch-card">
-              <small>05</small>
-              <div>
-                <h3>AI Agent Automation</h3>
-                <p>반복 업무를 자동화하고 개발 생산성을 높이는 에이전트 흐름을 연구합니다.</p>
-              </div>
-            </article>
-            <article class="arch-card">
-              <small>06</small>
-              <div>
-                <h3>Digital Twin Scope</h3>
-                <p>현장 데이터와 시각화 모델을 연결해 운영 관점을 확장합니다.</p>
-              </div>
-            </article>
+              </article>
+
+              <article class="visual-card top-right">
+                <small>AI Automation</small>
+                <p>반복 업무를 줄이고 개발 생산성을 높이는 에이전트 흐름.</p>
+              </article>
+
+              <article class="visual-card bottom">
+                <div class="mini-metric">
+                  <small>ERP Module</small>
+                  <strong>Process</strong>
+                </div>
+                <div class="mini-metric">
+                  <small>Analytics</small>
+                  <strong>Visual Data</strong>
+                </div>
+                <div class="mini-metric">
+                  <small>Digital Twin</small>
+                  <strong>Connected Ops</strong>
+                </div>
+              </article>
+            </div>
           </div>
 
-          <div class="stats-row">
-            <div class="stat-box">
-              <div class="stat-value">ERP</div>
-              <div class="stat-label">Process Design</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-value">DB</div>
-              <div class="stat-label">Structured Data</div>
-            </div>
-            <div class="stat-box">
-              <div class="stat-value">AI</div>
-              <div class="stat-label">Workflow Automation</div>
-            </div>
+          <div class="insight-strip reveal">
+            <article class="strip-intro">
+              <div class="meta">Operational Focus</div>
+              <p>업무 흐름, 데이터 구조, 시각화 인터페이스를 한 시스템 안에서 연결합니다.</p>
+            </article>
+            <article class="strip-card">
+              <div class="meta">Modules</div>
+              <strong>ERP</strong>
+              <p>입출고, 재고, 물류</p>
+            </article>
+            <article class="strip-card">
+              <div class="meta">Architecture</div>
+              <strong>DB</strong>
+              <p>PostgreSQL, MySQL, MariaDB</p>
+            </article>
+            <article class="strip-card">
+              <div class="meta">Visualization</div>
+              <strong>UI</strong>
+              <p>대시보드, 그래프, 상태 모니터링</p>
+            </article>
+            <article class="strip-card">
+              <div class="meta">Automation</div>
+              <strong>AI</strong>
+              <p>실무형 자동화와 생산성 도구</p>
+            </article>
           </div>
         </div>
       </div>
@@ -731,7 +906,7 @@
           <h2>비즈니스 로직을 시스템으로 만들고, 데이터를 시각화하며, 실제 운영 가능한 도구로 완성합니다.</h2>
         </div>
         <div class="about-layout">
-          <div class="card reveal">
+          <article class="card reveal">
             <p class="lead">
               저는 웹 ERP, 데이터베이스, 그래픽 분석 프로그램을 개발하며 단순한 화면 구현보다
               실제 업무 흐름과 데이터 구조를 이해하고 시스템화하는 데 강점이 있습니다.
@@ -744,7 +919,7 @@
               MBTI는 ENTJ이며, 목표를 먼저 정의한 뒤 필요한 구조와 실행 계획을 빠르게 설계하고
               구체적인 결과물로 전환하는 방식으로 일합니다.
             </p>
-          </div>
+          </article>
           <aside class="about-note reveal">
             <div class="meta">Working Style</div>
             <h3 style="margin-top: 12px;">실무 중심 개발 방식</h3>
@@ -953,7 +1128,7 @@
           <article class="contact-card reveal">
             <div class="meta">Action</div>
             <h3 style="margin-top: 12px;">바로 이동</h3>
-            <div class="cta-row" style="margin-top: 20px;">
+            <div class="cta-row" style="margin-top: 18px;">
               <a class="button button-primary" href="mailto:your-email@example.com">Contact</a>
               <a class="button button-secondary" href="#top">Portfolio</a>
             </div>
@@ -973,18 +1148,16 @@
   </footer>
 
   <script>
-    const revealItems = document.querySelectorAll('.reveal');
+    const revealItems = document.querySelectorAll(".reveal");
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          entry.target.classList.add("visible");
           observer.unobserve(entry.target);
         }
       });
-    }, {
-      threshold: 0.18
-    });
+    }, { threshold: 0.18 });
 
     revealItems.forEach((item) => observer.observe(item));
   </script>
