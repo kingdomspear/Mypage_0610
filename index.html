@@ -248,52 +248,42 @@
       width: 100%;
       height: 100%;
       clip-path: inherit;
-      background:
-        radial-gradient(circle at 50% 20%, rgba(0, 212, 255, 0.28), transparent 25%),
-        linear-gradient(180deg, #222937 0%, #181f2b 100%);
       position: relative;
       overflow: hidden;
-    }
-
-    .hex-inner::before {
-      content: "";
-      position: absolute;
-      inset: 18% 24% 0;
-      border-radius: 120px 120px 18px 18px;
-      background: linear-gradient(180deg, #30384b 0%, #242b3a 100%);
     }
 
     .hex-inner::after {
       content: "";
       position: absolute;
-      left: 50%;
-      bottom: 10%;
-      width: 68%;
-      height: 46%;
-      transform: translateX(-50%);
-      border-radius: 40px 40px 22px 22px;
-      background: linear-gradient(180deg, #151b26 0%, #0e141d 100%);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      inset: 0;
+      background:
+        linear-gradient(180deg, rgba(0, 212, 255, 0.18), transparent 25%),
+        linear-gradient(0deg, rgba(10, 16, 24, 0.35), rgba(10, 16, 24, 0.08));
+    }
+
+    .hex-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transform: scale(1.02);
     }
 
     .portrait-badge {
       position: absolute;
       left: 50%;
-      top: 48%;
-      transform: translate(-50%, -50%);
-      width: 44%;
-      aspect-ratio: 1 / 1;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle at 35% 32%, rgba(255, 255, 255, 0.2), transparent 18%),
-        linear-gradient(180deg, #2f3646 0%, #1f2531 100%);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      display: grid;
-      place-items: center;
-      color: rgba(255, 255, 255, 0.88);
-      font-size: 3.4rem;
-      font-weight: 800;
-      letter-spacing: -0.06em;
+      bottom: 28px;
+      transform: translateX(-50%);
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(10, 16, 24, 0.72);
+      backdrop-filter: blur(8px);
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      z-index: 1;
     }
 
     .section-heading {
@@ -383,62 +373,25 @@
 
     .project-thumb {
       height: 190px;
-      border-radius: 16px;
-      background:
-        linear-gradient(140deg, rgba(0, 212, 255, 0.16), rgba(0, 212, 255, 0.02)),
-        linear-gradient(180deg, #2b3343 0%, #1d2431 100%);
-      border: 1px solid rgba(255, 255, 255, 0.05);
       position: relative;
       overflow: hidden;
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      background: #18202c;
     }
 
-    .project-thumb::before,
     .project-thumb::after {
       content: "";
       position: absolute;
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      background: rgba(255, 255, 255, 0.03);
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10, 16, 24, 0.02), rgba(10, 16, 24, 0.42));
     }
 
-    .project-thumb::before {
-      inset: 20px 26px 88px;
-    }
-
-    .project-thumb::after {
-      inset: 108px 26px 22px;
-    }
-
-    .project-thumb .mini-card {
-      position: absolute;
-      left: 26px;
-      top: 28px;
-      width: 86px;
-      height: 56px;
-      border-radius: 12px;
-      background: rgba(0, 212, 255, 0.12);
-      border: 1px solid rgba(0, 212, 255, 0.16);
-    }
-
-    .project-thumb .mini-line {
-      position: absolute;
-      right: 26px;
-      top: 38px;
-      width: 88px;
-      height: 10px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      box-shadow: 0 18px 0 rgba(255, 255, 255, 0.08);
-    }
-
-    .project-thumb .accent-bar {
-      position: absolute;
-      left: 26px;
-      bottom: 34px;
-      width: 120px;
-      height: 12px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, rgba(0, 212, 255, 0.8), rgba(0, 212, 255, 0.2));
+    .project-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     .project-meta {
@@ -642,7 +595,12 @@
           <div class="home-image reveal">
             <div class="hex-frame">
               <div class="hex-inner">
-                <div class="portrait-badge">MC</div>
+                <img
+                  class="hex-photo"
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80"
+                  alt="Developer portrait"
+                >
+                <div class="portrait-badge">Martin Choi</div>
               </div>
             </div>
           </div>
@@ -654,7 +612,12 @@
           <div class="about-image reveal">
             <div class="hex-frame">
               <div class="hex-inner">
-                <div class="portrait-badge">M</div>
+                <img
+                  class="hex-photo"
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=80"
+                  alt="Developer portrait"
+                >
+                <div class="portrait-badge">System Developer</div>
               </div>
             </div>
           </div>
@@ -725,9 +688,10 @@
         <div class="projects-grid">
           <article class="project-box reveal">
             <div class="project-thumb">
-              <div class="mini-card"></div>
-              <div class="mini-line"></div>
-              <div class="accent-bar"></div>
+              <img
+                src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80"
+                alt="Warehouse logistics system"
+              >
             </div>
             <div class="project-meta">
               <span>ERP</span>
@@ -738,9 +702,10 @@
 
           <article class="project-box reveal">
             <div class="project-thumb">
-              <div class="mini-card"></div>
-              <div class="mini-line"></div>
-              <div class="accent-bar"></div>
+              <img
+                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80"
+                alt="Server and database infrastructure"
+              >
             </div>
             <div class="project-meta">
               <span>Database</span>
@@ -751,9 +716,10 @@
 
           <article class="project-box reveal">
             <div class="project-thumb">
-              <div class="mini-card"></div>
-              <div class="mini-line"></div>
-              <div class="accent-bar"></div>
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80"
+                alt="Analytics dashboard display"
+              >
             </div>
             <div class="project-meta">
               <span>Analytics</span>
@@ -764,9 +730,10 @@
 
           <article class="project-box reveal">
             <div class="project-thumb">
-              <div class="mini-card"></div>
-              <div class="mini-line"></div>
-              <div class="accent-bar"></div>
+              <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80"
+                alt="Developer workspace with code"
+              >
             </div>
             <div class="project-meta">
               <span>FastAPI</span>
@@ -777,9 +744,10 @@
 
           <article class="project-box reveal">
             <div class="project-thumb">
-              <div class="mini-card"></div>
-              <div class="mini-line"></div>
-              <div class="accent-bar"></div>
+              <img
+                src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=80"
+                alt="Connected data visualization"
+              >
             </div>
             <div class="project-meta">
               <span>Digital Twin</span>
@@ -790,9 +758,10 @@
 
           <article class="project-box reveal">
             <div class="project-thumb">
-              <div class="mini-card"></div>
-              <div class="mini-line"></div>
-              <div class="accent-bar"></div>
+              <img
+                src="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1200&q=80"
+                alt="AI and automation workspace"
+              >
             </div>
             <div class="project-meta">
               <span>AI Agent</span>
@@ -822,7 +791,7 @@
               <h3>Collaboration & Inquiry</h3>
               <p>
                 <!-- Replace this email address with your real contact email -->
-                your-email@example.com
+                spear131581@gmail.com
               </p>
             </article>
           </div>
@@ -839,7 +808,7 @@
               </div>
               <textarea placeholder="Your Message"></textarea>
               <div class="btn-row">
-                <a class="btn" href="mailto:your-email@example.com">Send Message</a>
+                <a class="btn" href="mailto:spear131581@gmail.com">Send Message</a>
               </div>
             </form>
           </div>
