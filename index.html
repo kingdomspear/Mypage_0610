@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Martin Choi | Developer Portfolio</title>
+  <title>Martin Choi | System Design Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;600;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #040705;
-      --bg-soft: #08100a;
-      --panel: rgba(11, 18, 14, 0.9);
-      --panel-soft: rgba(14, 23, 18, 0.72);
-      --panel-glow: rgba(23, 39, 30, 0.9);
-      --line: rgba(94, 131, 104, 0.22);
-      --line-strong: rgba(106, 224, 157, 0.34);
-      --text: #edf4ee;
-      --muted: #92a596;
-      --accent: #43d985;
-      --accent-soft: #8cf3bc;
-      --accent-deep: #173723;
-      --card-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
-      --radius-xl: 34px;
+      --bg: #040706;
+      --bg-soft: #09100c;
+      --panel: rgba(12, 18, 15, 0.9);
+      --panel-strong: rgba(10, 14, 12, 0.96);
+      --panel-soft: rgba(17, 24, 20, 0.76);
+      --line: rgba(92, 136, 104, 0.2);
+      --line-strong: rgba(121, 236, 168, 0.34);
+      --text: #eef5f0;
+      --muted: #90a495;
+      --accent: #47db8d;
+      --accent-soft: #8af1bd;
+      --accent-deep: #133423;
+      --shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+      --radius-xl: 36px;
       --radius-lg: 24px;
       --radius-md: 18px;
-      --container: 1220px;
+      --container: 1240px;
     }
 
     * {
@@ -41,35 +41,34 @@
       font-family: "Noto Sans KR", "Noto Sans", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top center, rgba(67, 217, 133, 0.12), transparent 24%),
-        radial-gradient(circle at 78% 10%, rgba(67, 217, 133, 0.08), transparent 18%),
-        linear-gradient(180deg, #050806 0%, #050806 100%);
-      min-height: 100vh;
+        radial-gradient(circle at top center, rgba(71, 219, 141, 0.12), transparent 24%),
+        radial-gradient(circle at 80% 12%, rgba(71, 219, 141, 0.08), transparent 16%),
+        linear-gradient(180deg, #040706 0%, #050806 100%);
       overflow-x: hidden;
     }
 
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background-image:
-        linear-gradient(rgba(67, 217, 133, 0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(67, 217, 133, 0.05) 1px, transparent 1px);
-      background-size: 48px 48px;
-      opacity: 0.28;
-      pointer-events: none;
-      z-index: -2;
-    }
-
+    body::before,
     body::after {
       content: "";
       position: fixed;
       inset: 0;
-      background:
-        radial-gradient(circle at 18% 22%, rgba(67, 217, 133, 0.11), transparent 12%),
-        radial-gradient(circle at 82% 16%, rgba(67, 217, 133, 0.08), transparent 15%);
       pointer-events: none;
       z-index: -1;
+    }
+
+    body::before {
+      background-image:
+        linear-gradient(rgba(71, 219, 141, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(71, 219, 141, 0.04) 1px, transparent 1px);
+      background-size: 46px 46px;
+      opacity: 0.4;
+    }
+
+    body::after {
+      background:
+        radial-gradient(circle at 15% 22%, rgba(71, 219, 141, 0.08), transparent 14%),
+        radial-gradient(circle at 74% 8%, rgba(71, 219, 141, 0.08), transparent 18%),
+        radial-gradient(circle at 78% 60%, rgba(71, 219, 141, 0.05), transparent 16%);
     }
 
     a {
@@ -85,21 +84,21 @@
     }
 
     h1 {
-      font-size: clamp(2rem, 4vw, 3.85rem);
-      line-height: 1.06;
-      letter-spacing: -0.045em;
-      max-width: 9.5em;
+      font-size: clamp(2.2rem, 4.8vw, 4.8rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      max-width: 9.4em;
     }
 
     h2 {
-      margin-top: 16px;
-      font-size: clamp(1.42rem, 2vw, 2rem);
+      margin-top: 14px;
+      font-size: clamp(1.45rem, 2vw, 2.1rem);
       line-height: 1.34;
       letter-spacing: -0.03em;
     }
 
     h3 {
-      font-size: clamp(0.98rem, 1.18vw, 1.08rem);
+      font-size: clamp(0.98rem, 1.14vw, 1.12rem);
       line-height: 1.5;
       letter-spacing: -0.01em;
     }
@@ -109,54 +108,12 @@
       margin: 0 auto;
     }
 
-    .section {
-      padding: 104px 0;
-      position: relative;
-    }
-
-    .section-header {
-      max-width: 740px;
-      margin-bottom: 34px;
-    }
-
-    .lead {
-      margin-top: 18px;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.9;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(106, 224, 157, 0.16);
-      background: rgba(12, 19, 15, 0.9);
-      color: var(--accent-soft);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 18px rgba(67, 217, 133, 0.75);
-    }
-
     .nav-wrap {
       position: sticky;
       top: 0;
-      z-index: 20;
+      z-index: 40;
       padding-top: 14px;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
 
     .nav {
@@ -164,41 +121,39 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      min-height: 72px;
+      min-height: 76px;
       padding: 0 22px;
-      border: 1px solid rgba(106, 224, 157, 0.14);
-      border-radius: 20px;
-      background: rgba(7, 11, 8, 0.82);
-      box-shadow: 0 16px 42px rgba(0, 0, 0, 0.28);
+      border-radius: 22px;
+      border: 1px solid rgba(121, 236, 168, 0.14);
+      background: rgba(8, 11, 9, 0.82);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.24);
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
+      font-size: 1rem;
       font-weight: 700;
       letter-spacing: -0.02em;
     }
 
     .brand-mark {
       position: relative;
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
+      transform: rotate(45deg);
+      border-radius: 7px;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 22px rgba(71, 219, 141, 0.22);
     }
 
-    .brand-mark::before,
     .brand-mark::after {
       content: "";
       position: absolute;
-      inset: 2px;
-      border: 2px solid var(--accent);
-      border-radius: 8px;
-      transform: rotate(45deg);
-    }
-
-    .brand-mark::after {
-      inset: 6px;
-      border-color: rgba(140, 243, 188, 0.9);
+      inset: 5px;
+      border-radius: 4px;
+      border: 2px solid var(--accent-soft);
     }
 
     .brand span {
@@ -223,67 +178,84 @@
     }
 
     .hero {
-      padding: 30px 0 0;
+      padding: 28px 0 34px;
     }
 
-    .hero-shell {
+    .hero-stage {
       position: relative;
-      padding: 54px;
-      border-radius: 38px;
-      border: 1px solid rgba(106, 224, 157, 0.16);
+      min-height: 860px;
+      border-radius: 40px;
+      border: 1px solid rgba(121, 236, 168, 0.14);
       background:
-        linear-gradient(180deg, rgba(10, 16, 12, 0.94), rgba(8, 13, 10, 0.96)),
-        var(--panel);
-      box-shadow: var(--card-shadow);
+        radial-gradient(circle at 32% 16%, rgba(71, 219, 141, 0.08), transparent 20%),
+        linear-gradient(180deg, rgba(12, 18, 15, 0.96), rgba(7, 11, 9, 0.98));
+      box-shadow: var(--shadow);
       overflow: hidden;
+      isolation: isolate;
     }
 
-    .hero-shell::before {
+    .hero-stage::before {
       content: "";
       position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 20% 12%, rgba(67, 217, 133, 0.13), transparent 24%),
-        linear-gradient(120deg, rgba(67, 217, 133, 0.08), transparent 30%, transparent 70%, rgba(67, 217, 133, 0.05));
+      inset: 24px;
+      border-radius: 30px;
+      border: 1px solid rgba(121, 236, 168, 0.08);
       pointer-events: none;
     }
 
-    .hero-shell::after {
-      content: "";
-      position: absolute;
-      inset: 22px;
-      border-radius: 28px;
-      border: 1px solid rgba(106, 224, 157, 0.06);
-      pointer-events: none;
-    }
-
-    .hero-grid {
+    .stage-grid {
       position: relative;
+      z-index: 2;
       display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.95fr);
-      gap: 28px;
+      grid-template-columns: 1.02fr 0.98fr;
+      gap: 18px;
+      padding: 56px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
       align-items: center;
-      z-index: 1;
+      gap: 10px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(121, 236, 168, 0.16);
+      background: rgba(13, 18, 15, 0.86);
+      color: var(--accent-soft);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 18px rgba(71, 219, 141, 0.8);
     }
 
     .hero-copy {
-      max-width: 620px;
+      align-self: center;
+      max-width: 640px;
+      padding-top: 28px;
+    }
+
+    .hero-copy p {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.9;
+      max-width: 560px;
     }
 
     .hero-kicker {
       display: block;
       margin-top: 18px;
-      color: #d9e6dc;
-      font-size: clamp(1.02rem, 1.6vw, 1.26rem);
+      color: #dfe9e1;
+      font-size: clamp(1.02rem, 1.5vw, 1.28rem);
       line-height: 1.7;
-    }
-
-    .hero-description {
-      margin-top: 22px;
-      max-width: 580px;
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.92;
     }
 
     .role-tags,
@@ -302,14 +274,10 @@
       align-items: center;
       padding: 10px 15px;
       border-radius: 999px;
-      border: 1px solid rgba(106, 224, 157, 0.15);
-      background: rgba(14, 22, 17, 0.86);
+      border: 1px solid rgba(121, 236, 168, 0.14);
+      background: rgba(15, 22, 18, 0.88);
       color: #dce8de;
       font-size: 0.9rem;
-    }
-
-    .stack-tags .tag {
-      background: rgba(10, 15, 12, 0.9);
     }
 
     .cta-row {
@@ -327,7 +295,7 @@
       padding: 0 22px;
       border-radius: 14px;
       border: 1px solid transparent;
-      font-size: 0.96rem;
+      font-size: 0.95rem;
       font-weight: 600;
       transition:
         transform 0.24s ease,
@@ -341,344 +309,669 @@
     }
 
     .button-primary {
-      background: linear-gradient(135deg, #6ef0a7, #39c878);
-      color: #061109;
-      box-shadow: 0 18px 42px rgba(67, 217, 133, 0.22);
+      background: linear-gradient(135deg, #7df3b5, #40cb7c);
+      color: #071109;
+      box-shadow: 0 18px 40px rgba(71, 219, 141, 0.24);
     }
 
     .button-secondary {
-      border-color: rgba(106, 224, 157, 0.18);
-      background: rgba(13, 20, 16, 0.88);
+      border-color: rgba(121, 236, 168, 0.16);
+      background: rgba(14, 20, 17, 0.92);
       color: var(--text);
     }
 
-    .hero-visual {
+    .stage-visual {
       position: relative;
-      min-height: 470px;
-      border-radius: 30px;
-      border: 1px solid rgba(106, 224, 157, 0.12);
-      background:
-        radial-gradient(circle at 50% 50%, rgba(67, 217, 133, 0.08), transparent 40%),
-        linear-gradient(180deg, rgba(11, 18, 14, 0.72), rgba(8, 13, 10, 0.96));
-      overflow: hidden;
+      min-height: 590px;
+      perspective: 1400px;
+      transform-style: preserve-3d;
     }
 
-    .hero-visual::before {
-      content: "";
+    .scene-grid {
       position: absolute;
-      inset: 28px;
-      border-radius: 26px;
-      border: 1px solid rgba(106, 224, 157, 0.08);
+      inset: 30px 18px 90px 18px;
+      background-image:
+        linear-gradient(rgba(71, 219, 141, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(71, 219, 141, 0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      transform: rotateX(72deg) translateZ(-40px);
+      transform-origin: center center;
+      opacity: 0.8;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.08), black 38%, black 100%);
     }
 
-    .grid-fade {
+    .glow-disc {
+      position: absolute;
+      left: 52%;
+      top: 18%;
+      width: 360px;
+      height: 360px;
+      transform: translateX(-50%);
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(71, 219, 141, 0.24), rgba(71, 219, 141, 0.04) 46%, transparent 70%);
+      filter: blur(6px);
+      animation: pulse 6s ease-in-out infinite;
+    }
+
+    .pillar {
+      position: absolute;
+      bottom: 164px;
+      width: 118px;
+      height: 210px;
+      transform-style: preserve-3d;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .pillar::before,
+    .pillar::after {
+      content: "";
       position: absolute;
       inset: 0;
-      background-image:
-        linear-gradient(rgba(67, 217, 133, 0.06) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(67, 217, 133, 0.06) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: radial-gradient(circle at center, black 54%, transparent 92%);
-      opacity: 0.75;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(23, 42, 30, 0.96), rgba(7, 11, 9, 0.98));
+      border: 1px solid rgba(121, 236, 168, 0.14);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
     }
 
-    .shape-ring {
-      position: absolute;
-      top: 52px;
-      right: 54px;
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 16px solid rgba(54, 97, 68, 0.36);
-      box-shadow:
-        inset 0 0 0 1px rgba(140, 243, 188, 0.15),
-        0 24px 50px rgba(0, 0, 0, 0.32);
+    .pillar::before {
+      transform: rotateY(0deg) translateZ(26px);
     }
 
-    .shape-ring::after {
-      content: "";
-      position: absolute;
-      inset: 18px;
-      border-radius: 50%;
-      border: 2px solid rgba(140, 243, 188, 0.24);
+    .pillar::after {
+      transform: rotateX(90deg) translateZ(26px);
+      height: 52px;
+      top: -26px;
+      background: linear-gradient(180deg, rgba(36, 69, 49, 0.96), rgba(17, 28, 21, 0.98));
     }
 
-    .shape-hex {
-      position: absolute;
-      top: 112px;
-      left: 58%;
-      width: 190px;
-      height: 220px;
-      transform: translateX(-50%);
-      clip-path: polygon(26% 0, 74% 0, 100% 50%, 74% 100%, 26% 100%, 0 50%);
-      background:
-        linear-gradient(180deg, rgba(17, 28, 21, 0.68), rgba(8, 12, 9, 0.96)),
-        var(--panel-glow);
-      border: 1px solid rgba(106, 224, 157, 0.12);
-      box-shadow:
-        inset -18px -18px 40px rgba(0, 0, 0, 0.38),
-        inset 18px 18px 40px rgba(67, 217, 133, 0.08),
-        0 40px 70px rgba(0, 0, 0, 0.42);
+    .pillar.one {
+      left: 72px;
+      height: 160px;
+      width: 104px;
+      animation-delay: -1s;
     }
 
-    .shape-hex::before {
-      content: "";
-      position: absolute;
-      inset: 22px;
-      clip-path: inherit;
-      background: linear-gradient(180deg, rgba(12, 21, 16, 0.95), rgba(7, 10, 8, 0.92));
-      border: 1px solid rgba(106, 224, 157, 0.12);
+    .pillar.two {
+      left: 214px;
+      height: 260px;
+      width: 138px;
+      animation-delay: -2.3s;
     }
 
-    .shape-coin {
+    .pillar.three {
+      right: 86px;
+      height: 210px;
+      width: 110px;
+      animation-delay: -0.4s;
+    }
+
+    .token {
       position: absolute;
-      left: 96px;
-      top: 88px;
-      width: 92px;
-      height: 92px;
       border-radius: 50%;
       background:
-        radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.15), transparent 30%),
-        linear-gradient(145deg, #11231a, #060907 70%);
-      border: 1px solid rgba(106, 224, 157, 0.2);
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.18), transparent 28%),
+        linear-gradient(145deg, rgba(26, 45, 32, 0.98), rgba(6, 9, 8, 0.98));
+      border: 1px solid rgba(121, 236, 168, 0.18);
       box-shadow:
-        inset 0 0 0 12px rgba(21, 36, 27, 0.9),
-        0 30px 55px rgba(0, 0, 0, 0.36);
+        inset 0 0 0 10px rgba(13, 21, 17, 0.92),
+        0 24px 44px rgba(0, 0, 0, 0.36);
+      animation: float 6s ease-in-out infinite;
     }
 
-    .shape-coin::before {
-      content: "ERP";
+    .token::before {
       position: absolute;
       inset: 0;
       display: grid;
       place-items: center;
       color: var(--accent-soft);
-      font-size: 1.05rem;
+      font-size: 0.98rem;
       font-weight: 700;
       letter-spacing: 0.08em;
     }
 
-    .visual-card {
-      position: absolute;
-      padding: 16px 18px;
-      border-radius: 18px;
-      border: 1px solid rgba(106, 224, 157, 0.12);
-      background: rgba(9, 15, 11, 0.88);
-      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
-      backdrop-filter: blur(10px);
+    .token.erp {
+      left: 78px;
+      top: 54px;
+      width: 92px;
+      height: 92px;
     }
 
-    .visual-card small,
+    .token.erp::before {
+      content: "ERP";
+    }
+
+    .token.db {
+      right: 140px;
+      top: 30px;
+      width: 70px;
+      height: 70px;
+      animation-delay: -2.4s;
+    }
+
+    .token.db::before {
+      content: "DB";
+      font-size: 0.88rem;
+    }
+
+    .token.ai {
+      right: 42px;
+      top: 134px;
+      width: 64px;
+      height: 64px;
+      animation-delay: -1.3s;
+    }
+
+    .token.ai::before {
+      content: "AI";
+      font-size: 0.84rem;
+    }
+
+    .diamond-core {
+      position: absolute;
+      left: 50%;
+      top: 158px;
+      width: 250px;
+      height: 250px;
+      transform: translateX(-50%) rotateX(62deg) rotateZ(45deg);
+      transform-style: preserve-3d;
+      animation: spin-slow 18s linear infinite;
+    }
+
+    .diamond-face {
+      position: absolute;
+      inset: 0;
+      border-radius: 34px;
+      border: 1px solid rgba(121, 236, 168, 0.16);
+      background: linear-gradient(180deg, rgba(18, 30, 23, 0.9), rgba(8, 12, 10, 0.98));
+      box-shadow:
+        inset 18px 18px 30px rgba(255, 255, 255, 0.02),
+        inset -24px -24px 40px rgba(0, 0, 0, 0.38),
+        0 32px 60px rgba(0, 0, 0, 0.34);
+    }
+
+    .diamond-face:nth-child(1) {
+      transform: translateZ(54px);
+    }
+
+    .diamond-face:nth-child(2) {
+      transform: rotateY(90deg) translateZ(54px);
+    }
+
+    .diamond-face:nth-child(3) {
+      transform: rotateX(90deg) translateZ(54px);
+    }
+
+    .diamond-highlight {
+      position: absolute;
+      inset: 22px;
+      border-radius: 26px;
+      background: linear-gradient(180deg, rgba(71, 219, 141, 0.14), rgba(71, 219, 141, 0.02));
+      filter: blur(1px);
+    }
+
+    .float-card {
+      position: absolute;
+      padding: 16px 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(121, 236, 168, 0.14);
+      background: rgba(12, 18, 15, 0.84);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
+      backdrop-filter: blur(14px);
+    }
+
+    .float-card small,
+    .section-kicker,
     .meta {
       color: var(--accent-soft);
-      font-size: 0.75rem;
+      font-size: 0.76rem;
       font-weight: 600;
       letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
-    .visual-card p,
-    .card p,
-    .timeline-item p,
-    .mindset-item p,
-    .contact-card p,
-    .philosophy-card p {
+    .float-card p,
+    .bento-card p,
+    .roadmap-card p,
+    .stack-panel p,
+    .contact-panel p,
+    .manifesto-card p,
+    .about-panel p {
       margin-top: 10px;
       color: var(--muted);
       font-size: 0.95rem;
       line-height: 1.78;
     }
 
-    .visual-card.top-left {
-      left: 34px;
-      top: 210px;
-      max-width: 190px;
+    .float-card.one {
+      left: 22px;
+      bottom: 166px;
+      width: 210px;
     }
 
-    .visual-card.top-right {
-      right: 34px;
-      top: 178px;
-      max-width: 176px;
+    .float-card.two {
+      right: 24px;
+      bottom: 136px;
+      width: 190px;
     }
 
-    .visual-card.bottom {
-      left: 40px;
-      right: 40px;
-      bottom: 38px;
+    .hero-rail {
+      position: absolute;
+      left: 56px;
+      right: 56px;
+      bottom: 36px;
+      z-index: 3;
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: 1.2fr repeat(4, minmax(0, 1fr));
       gap: 12px;
-      padding: 14px;
     }
 
-    .mini-metric {
-      padding: 14px;
-      border-radius: 14px;
-      background: rgba(14, 22, 17, 0.9);
-      border: 1px solid rgba(106, 224, 157, 0.1);
+    .rail-intro,
+    .rail-metric {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid rgba(121, 236, 168, 0.12);
+      background: rgba(11, 17, 14, 0.92);
     }
 
-    .mini-metric strong {
-      display: block;
-      margin-top: 8px;
-      font-size: 1.18rem;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .insight-strip {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.25fr repeat(4, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-      padding: 14px;
-      border-radius: 22px;
-      border: 1px solid rgba(106, 224, 157, 0.12);
-      background: rgba(9, 14, 11, 0.9);
-    }
-
-    .strip-intro,
-    .strip-card {
-      min-height: 88px;
-      padding: 16px 18px;
-      border-radius: 16px;
-      background: rgba(14, 22, 17, 0.92);
-      border: 1px solid rgba(106, 224, 157, 0.1);
-    }
-
-    .strip-intro p,
-    .strip-card p {
+    .rail-intro p,
+    .rail-metric p {
       margin-top: 8px;
       color: var(--muted);
       font-size: 0.9rem;
       line-height: 1.6;
     }
 
-    .strip-card strong {
+    .rail-metric strong {
       display: block;
-      margin-top: 14px;
-      font-size: 1.2rem;
-      font-weight: 700;
+      margin-top: 12px;
+      font-size: 1.15rem;
       color: var(--accent-soft);
     }
 
-    .card-grid,
-    .philosophy-grid,
-    .mindset-grid,
-    .contact-grid {
+    .section {
+      padding: 108px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+
+    .section-head p {
+      margin-top: 16px;
+      color: var(--muted);
+      line-height: 1.84;
+    }
+
+    .about-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: 1.05fr 0.95fr;
       gap: 18px;
     }
 
-    .timeline {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .about-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-      gap: 18px;
-    }
-
-    .card,
-    .timeline-item,
-    .mindset-item,
-    .contact-card,
-    .philosophy-card,
-    .about-note {
+    .panel,
+    .bento-card,
+    .roadmap-card,
+    .stack-panel,
+    .manifesto-card,
+    .contact-panel {
       position: relative;
-      padding: 26px;
-      border-radius: 24px;
-      border: 1px solid rgba(106, 224, 157, 0.12);
+      padding: 28px;
+      border-radius: 28px;
+      border: 1px solid rgba(121, 236, 168, 0.12);
       background:
-        linear-gradient(180deg, rgba(13, 20, 16, 0.92), rgba(9, 14, 11, 0.96)),
+        linear-gradient(180deg, rgba(13, 19, 16, 0.95), rgba(9, 13, 11, 0.98)),
         var(--panel);
       box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.02);
       overflow: hidden;
       transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
     }
 
-    .card::before,
-    .timeline-item::before,
-    .mindset-item::before,
-    .contact-card::before,
-    .philosophy-card::before,
-    .about-note::before {
+    .panel::before,
+    .bento-card::before,
+    .roadmap-card::before,
+    .stack-panel::before,
+    .manifesto-card::before,
+    .contact-panel::before {
       content: "";
       position: absolute;
-      inset: auto -40px -40px auto;
+      right: -30px;
+      bottom: -30px;
       width: 120px;
       height: 120px;
-      background: radial-gradient(circle, rgba(67, 217, 133, 0.12), transparent 70%);
+      background: radial-gradient(circle, rgba(71, 219, 141, 0.1), transparent 70%);
       pointer-events: none;
     }
 
-    .card:hover,
-    .timeline-item:hover,
-    .mindset-item:hover,
-    .contact-card:hover,
-    .philosophy-card:hover,
-    .about-note:hover {
+    .panel:hover,
+    .bento-card:hover,
+    .roadmap-card:hover,
+    .stack-panel:hover,
+    .manifesto-card:hover,
+    .contact-panel:hover {
       transform: translateY(-6px);
-      border-color: rgba(106, 224, 157, 0.26);
-      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.28);
+      border-color: rgba(121, 236, 168, 0.22);
+      box-shadow: 0 28px 60px rgba(0, 0, 0, 0.24);
     }
 
-    .card-grid {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+    .about-panel {
+      min-height: 100%;
     }
 
-    .card-number,
-    .philosophy-number {
+    .about-panel p + p {
+      margin-top: 16px;
+    }
+
+    .about-aside {
+      display: grid;
+      gap: 18px;
+    }
+
+    .identity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .identity-chip {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(15, 22, 18, 0.86);
+      border: 1px solid rgba(121, 236, 168, 0.1);
+    }
+
+    .identity-chip strong {
+      display: block;
+      margin-top: 10px;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .identity-chip span {
+      display: block;
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    .bento-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .bento-card.large {
+      grid-column: span 7;
+      min-height: 290px;
+    }
+
+    .bento-card.medium {
+      grid-column: span 5;
+      min-height: 290px;
+    }
+
+    .bento-card.small {
+      grid-column: span 4;
+      min-height: 250px;
+    }
+
+    .bento-card.wide {
+      grid-column: span 8;
+      min-height: 250px;
+    }
+
+    .bento-icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 40px;
-      height: 40px;
-      border-radius: 12px;
-      background: linear-gradient(145deg, #52ee99, #2fbe6d);
-      color: #071109;
-      font-size: 0.94rem;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #7cf0b4, #36c977);
+      color: #081109;
       font-weight: 800;
       margin-bottom: 16px;
     }
 
-    .about-note ul {
-      margin: 16px 0 0;
-      padding-left: 18px;
-      color: var(--muted);
-      line-height: 1.9;
+    .bento-lines {
+      display: grid;
+      gap: 10px;
+      margin-top: 20px;
     }
 
-    .timeline-item::after {
+    .bento-line {
+      height: 9px;
+      border-radius: 999px;
+      background: rgba(121, 236, 168, 0.12);
+      overflow: hidden;
+    }
+
+    .bento-line::after {
+      content: "";
+      display: block;
+      height: 100%;
+      width: var(--fill, 60%);
+      border-radius: inherit;
+      background: linear-gradient(90deg, rgba(121, 236, 168, 0.24), rgba(121, 236, 168, 0.82));
+    }
+
+    .system-map {
+      position: relative;
+      min-height: 140px;
+      margin-top: 18px;
+    }
+
+    .system-node {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      min-width: 92px;
+      min-height: 48px;
+      padding: 0 14px;
+      border-radius: 16px;
+      border: 1px solid rgba(121, 236, 168, 0.14);
+      background: rgba(15, 22, 18, 0.88);
+      color: #dce9df;
+      font-size: 0.88rem;
+    }
+
+    .system-node::before {
       content: "";
       position: absolute;
-      left: 0;
-      top: 22px;
-      bottom: 22px;
-      width: 3px;
-      border-radius: 999px;
-      background: linear-gradient(180deg, var(--accent), rgba(67, 217, 133, 0.04));
+      inset: -14px;
+      border: 1px dashed rgba(121, 236, 168, 0.08);
+      border-radius: 24px;
     }
 
-    .contact-card strong {
-      display: inline-block;
-      margin-top: 16px;
-      color: var(--text);
-      font-size: 1rem;
-      font-weight: 600;
+    .system-node.erp {
+      left: 0;
+      top: 40px;
+    }
+
+    .system-node.db {
+      left: 35%;
+      top: 0;
+    }
+
+    .system-node.ui {
+      right: 0;
+      top: 40px;
+    }
+
+    .system-node.ai {
+      left: 35%;
+      bottom: 0;
+    }
+
+    .system-link {
+      position: absolute;
+      background: linear-gradient(90deg, transparent, rgba(121, 236, 168, 0.4), transparent);
+      height: 1px;
+      transform-origin: left center;
+    }
+
+    .system-link.a {
+      left: 84px;
+      top: 64px;
+      width: 160px;
+      transform: rotate(-15deg);
+    }
+
+    .system-link.b {
+      left: 48%;
+      top: 34px;
+      width: 150px;
+      transform: rotate(18deg);
+    }
+
+    .system-link.c {
+      left: 41%;
+      top: 74px;
+      width: 10px;
+      transform: rotate(90deg);
+      height: 90px;
+    }
+
+    .manifesto-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 18px;
+    }
+
+    .manifesto-stack {
+      display: grid;
+      gap: 18px;
+    }
+
+    .manifesto-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #7bf0b3, #39ca79);
+      color: #081109;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .stack-board {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .stack-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .stack-pills span {
+      padding: 11px 15px;
+      border-radius: 999px;
+      background: rgba(15, 22, 18, 0.88);
+      border: 1px solid rgba(121, 236, 168, 0.12);
+      color: #dbe8de;
+      font-size: 0.9rem;
+    }
+
+    .roadmap-grid {
+      display: grid;
+      grid-template-columns: repeat(6, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .roadmap-card {
+      min-height: 220px;
+    }
+
+    .roadmap-card.span-2 {
+      grid-column: span 2;
+    }
+
+    .roadmap-card.span-3 {
+      grid-column: span 3;
+    }
+
+    .roadmap-card.span-1 {
+      grid-column: span 1;
+    }
+
+    .roadmap-step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: rgba(71, 219, 141, 0.16);
+      color: var(--accent-soft);
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    .mindset-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .mindset-card {
+      padding: 24px;
+      border-radius: 24px;
+      border: 1px solid rgba(121, 236, 168, 0.12);
+      background:
+        linear-gradient(180deg, rgba(13, 19, 16, 0.94), rgba(9, 13, 11, 0.98)),
+        var(--panel);
+      transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease;
+    }
+
+    .mindset-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(121, 236, 168, 0.22);
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.24);
+    }
+
+    .mindset-card p {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.74;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+    }
+
+    .contact-panel.hero-contact {
+      min-height: 100%;
+    }
+
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 26px;
+    }
+
+    .contact-mini {
+      display: grid;
+      gap: 18px;
     }
 
     .footer {
       padding: 28px 0 42px;
-      color: rgba(146, 165, 150, 0.88);
-      font-size: 0.9rem;
       text-align: center;
+      color: rgba(144, 164, 149, 0.84);
+      font-size: 0.9rem;
     }
 
     .reveal {
@@ -692,102 +985,133 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 1120px) {
-      .hero-grid,
-      .about-layout,
-      .card-grid,
-      .philosophy-grid,
-      .mindset-grid,
-      .contact-grid,
-      .timeline {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
       }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .insight-strip {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .strip-intro {
-        grid-column: 1 / -1;
+      50% {
+        transform: translateY(-14px);
       }
     }
 
-    @media (max-width: 760px) {
-      .nav {
-        padding: 18px;
-        align-items: flex-start;
-        flex-direction: column;
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 0.8;
+        transform: translateX(-50%) scale(1);
       }
-
-      .nav-links {
-        gap: 14px;
+      50% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1.06);
       }
+    }
 
-      .section {
-        padding: 84px 0;
+    @keyframes spin-slow {
+      from {
+        transform: translateX(-50%) rotateX(62deg) rotateZ(45deg);
       }
-
-      .hero-shell {
-        padding: 28px;
-        border-radius: 28px;
+      to {
+        transform: translateX(-50%) rotateX(62deg) rotateZ(405deg);
       }
+    }
 
-      .hero-grid,
-      .about-layout,
-      .card-grid,
-      .philosophy-grid,
-      .mindset-grid,
-      .contact-grid,
-      .timeline,
-      .insight-strip,
-      .visual-card.bottom {
+    @media (max-width: 1160px) {
+      .stage-grid,
+      .about-grid,
+      .manifesto-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-visual {
-        min-height: 560px;
+      .hero-stage {
+        min-height: auto;
       }
 
-      .shape-ring {
-        width: 96px;
-        height: 96px;
-        right: 28px;
+      .stage-visual {
+        min-height: 620px;
       }
 
-      .shape-hex {
-        width: 160px;
-        height: 190px;
-        top: 132px;
-        left: 54%;
+      .hero-rail {
+        position: relative;
+        left: auto;
+        right: auto;
+        bottom: auto;
+        margin: 0 56px 56px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .shape-coin {
-        left: 28px;
-        top: 80px;
-        width: 82px;
-        height: 82px;
+      .rail-intro {
+        grid-column: 1 / -1;
       }
 
-      .visual-card.top-left {
-        left: 22px;
-        right: 120px;
-        top: 210px;
+      .bento-card.large,
+      .bento-card.medium,
+      .bento-card.small,
+      .bento-card.wide {
+        grid-column: span 6;
       }
 
-      .visual-card.top-right {
-        left: 120px;
-        right: 22px;
-        top: 132px;
+      .mindset-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 820px) {
+      .nav {
+        padding: 18px;
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .visual-card.bottom {
-        left: 22px;
-        right: 22px;
-        bottom: 22px;
+      .stage-grid {
+        padding: 28px;
+      }
+
+      .hero-rail {
+        margin: 0 28px 28px;
+        grid-template-columns: 1fr;
+      }
+
+      .rail-intro {
+        grid-column: auto;
+      }
+
+      .stage-visual {
+        min-height: 680px;
+      }
+
+      .float-card.one,
+      .float-card.two {
+        width: auto;
+      }
+
+      .float-card.one {
+        left: 16px;
+        right: 160px;
+      }
+
+      .float-card.two {
+        left: 160px;
+        right: 16px;
+      }
+
+      .bento-card.large,
+      .bento-card.medium,
+      .bento-card.small,
+      .bento-card.wide,
+      .roadmap-card.span-2,
+      .roadmap-card.span-3,
+      .roadmap-card.span-1 {
+        grid-column: 1 / -1;
+      }
+
+      .identity-grid,
+      .stack-board,
+      .mindset-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .roadmap-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -814,13 +1138,13 @@
   <main id="top">
     <section class="hero">
       <div class="container">
-        <div class="hero-shell">
-          <div class="hero-grid">
+        <div class="hero-stage">
+          <div class="stage-grid">
             <div class="hero-copy reveal">
               <span class="eyebrow">Developer Portfolio</span>
               <h1>I build systems that connect business, data, and visual intelligence.</h1>
               <span class="hero-kicker">비즈니스, 데이터, 시각화를 연결하는 실무형 개발자</span>
-              <p class="hero-description">
+              <p>
                 웹 ERP, 데이터베이스, 그래픽 분석 프로그램을 중심으로 업무 프로세스를 구조화하고,
                 데이터를 이해 가능한 시스템으로 전환하는 개발자입니다.
               </p>
@@ -836,63 +1160,58 @@
               </div>
             </div>
 
-            <div class="hero-visual reveal" aria-hidden="true">
-              <div class="grid-fade"></div>
-              <div class="shape-ring"></div>
-              <div class="shape-hex"></div>
-              <div class="shape-coin"></div>
+            <div class="stage-visual reveal" aria-hidden="true">
+              <div class="scene-grid"></div>
+              <div class="glow-disc"></div>
+              <div class="pillar one"></div>
+              <div class="pillar two"></div>
+              <div class="pillar three"></div>
+              <div class="token erp"></div>
+              <div class="token db"></div>
+              <div class="token ai"></div>
 
-              <article class="visual-card top-left">
-                <small>Database Layer</small>
-                <p>업무 데이터를 안정적으로 저장하고 분석 가능한 구조로 설계합니다.</p>
+              <div class="diamond-core">
+                <div class="diamond-face"><div class="diamond-highlight"></div></div>
+                <div class="diamond-face"></div>
+                <div class="diamond-face"></div>
+              </div>
+
+              <article class="float-card one">
+                <small>ERP Module</small>
+                <p>입고, 출고, 재고, 물류 흐름을 실제 업무 운영 기준으로 연결합니다.</p>
               </article>
 
-              <article class="visual-card top-right">
-                <small>AI Automation</small>
-                <p>반복 업무를 줄이고 개발 생산성을 높이는 에이전트 흐름.</p>
-              </article>
-
-              <article class="visual-card bottom">
-                <div class="mini-metric">
-                  <small>ERP Module</small>
-                  <strong>Process</strong>
-                </div>
-                <div class="mini-metric">
-                  <small>Analytics</small>
-                  <strong>Visual Data</strong>
-                </div>
-                <div class="mini-metric">
-                  <small>Digital Twin</small>
-                  <strong>Connected Ops</strong>
-                </div>
+              <article class="float-card two">
+                <small>Analytics Engine</small>
+                <p>시계열 데이터와 상태 정보를 분석 가능한 시각 구조로 가공합니다.</p>
               </article>
             </div>
           </div>
 
-          <div class="insight-strip reveal">
-            <article class="strip-intro">
-              <div class="meta">Operational Focus</div>
-              <p>업무 흐름, 데이터 구조, 시각화 인터페이스를 한 시스템 안에서 연결합니다.</p>
+          <div class="hero-rail reveal">
+            <article class="rail-intro">
+              <div class="meta">System Positioning</div>
+              <p>단순한 UI가 아니라 운영 가능한 시스템, 분석 가능한 데이터, 이해 가능한 시각화를 함께 설계합니다.</p>
             </article>
-            <article class="strip-card">
-              <div class="meta">Modules</div>
-              <strong>ERP</strong>
-              <p>입출고, 재고, 물류</p>
+            <article class="rail-metric">
+              <div class="meta">ERP</div>
+              <strong>Process Design</strong>
+              <p>업무 흐름 구조화</p>
             </article>
-            <article class="strip-card">
-              <div class="meta">Architecture</div>
-              <strong>DB</strong>
-              <p>PostgreSQL, MySQL, MariaDB</p>
+            <article class="rail-metric">
+              <div class="meta">DB</div>
+              <strong>Stable Schema</strong>
+              <p>분석 가능한 저장 구조</p>
             </article>
-            <article class="strip-card">
-              <div class="meta">Visualization</div>
-              <strong>UI</strong>
-              <p>대시보드, 그래프, 상태 모니터링</p>
+            <article class="rail-metric">
+              <div class="meta">UI</div>
+              <strong>Visual Insight</strong>
+              <p>그래픽 분석 인터페이스</p>
             </article>
-            <article class="strip-card">
-              <div class="meta">Automation</div>
-              <strong>AI</strong>
-              <p>실무형 자동화와 생산성 도구</p>
+            <article class="rail-metric">
+              <div class="meta">AI</div>
+              <strong>Automation</strong>
+              <p>개발 및 업무 흐름 자동화</p>
             </article>
           </div>
         </div>
@@ -901,70 +1220,116 @@
 
     <section class="section" id="about">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">About</span>
-          <h2>비즈니스 로직을 시스템으로 만들고, 데이터를 시각화하며, 실제 운영 가능한 도구로 완성합니다.</h2>
+        <div class="section-head reveal">
+          <div class="section-kicker">About Martin</div>
+          <h2>업무 흐름을 해석하고, 데이터 구조를 설계하고, 실제 운영 가능한 화면과 도구로 연결합니다.</h2>
+          <p>실무형 소프트웨어는 화면 하나가 아니라 시스템 전체의 연결 상태로 완성된다고 생각합니다.</p>
         </div>
-        <div class="about-layout">
-          <article class="card reveal">
-            <p class="lead">
-              저는 웹 ERP, 데이터베이스, 그래픽 분석 프로그램을 개발하며 단순한 화면 구현보다
+        <div class="about-grid">
+          <article class="panel about-panel reveal">
+            <p>
+              저는 웹 ERP, 데이터베이스, 그래픽 분석 프로그램을 개발하며 단순한 프론트엔드 구현보다
               실제 업무 흐름과 데이터 구조를 이해하고 시스템화하는 데 강점이 있습니다.
             </p>
-            <p class="lead">
+            <p>
               ERP, 물류, 데이터베이스, 분석 도구, 디지털 트윈, AI Agent 자동화까지 여러 기술을 연결해
               현장에서 바로 사용할 수 있는 소프트웨어를 만드는 것을 지향합니다.
             </p>
-            <p class="lead">
+            <p>
               MBTI는 ENTJ이며, 목표를 먼저 정의한 뒤 필요한 구조와 실행 계획을 빠르게 설계하고
               구체적인 결과물로 전환하는 방식으로 일합니다.
             </p>
           </article>
-          <aside class="about-note reveal">
-            <div class="meta">Working Style</div>
-            <h3 style="margin-top: 12px;">실무 중심 개발 방식</h3>
-            <ul>
-              <li>업무 흐름을 먼저 해석하고 시스템 경계를 정의합니다.</li>
-              <li>데이터 구조와 화면 구조를 함께 설계합니다.</li>
-              <li>운영 가능한 형태까지 구현하는 것을 우선합니다.</li>
-              <li>기술과 비즈니스 요구사항 사이의 간극을 줄입니다.</li>
-            </ul>
-          </aside>
+          <div class="about-aside">
+            <article class="panel reveal">
+              <div class="meta">Identity</div>
+              <div class="identity-grid">
+                <div class="identity-chip">
+                  <small>Role</small>
+                  <strong>Web ERP</strong>
+                  <span>실무 프로세스 중심 설계</span>
+                </div>
+                <div class="identity-chip">
+                  <small>Role</small>
+                  <strong>Database</strong>
+                  <span>안정적인 데이터 구조 설계</span>
+                </div>
+                <div class="identity-chip">
+                  <small>Role</small>
+                  <strong>Analytics</strong>
+                  <span>그래픽 분석 프로그램 구현</span>
+                </div>
+                <div class="identity-chip">
+                  <small>Style</small>
+                  <strong>ENTJ</strong>
+                  <span>목표 지향, 구조화, 실행 중심</span>
+                </div>
+              </div>
+            </article>
+            <article class="panel reveal">
+              <div class="meta">Core View</div>
+              <h3 style="margin-top: 12px;">비즈니스와 기술의 중간 지점을 설계하는 개발자</h3>
+              <p>요구사항을 기능으로 옮기는 수준이 아니라, 운영 흐름과 데이터 구조까지 포함해 시스템 경계를 정의합니다.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section" id="expertise">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Expertise</span>
-          <h2>핵심 전문 영역</h2>
-          <p class="lead">업무 시스템, 데이터 구조, 분석 도구, 자동화 흐름을 하나의 제품 관점에서 다룹니다.</p>
+        <div class="section-head reveal">
+          <div class="section-kicker">Expertise Matrix</div>
+          <h2>균등한 카드 나열 대신, 실제 역량의 무게중심이 보이도록 구성한 벤토 구조</h2>
+          <p>ERP, 데이터베이스, 분석 도구, 자동화를 각각 분리하지 않고 시스템적인 연결 관점으로 보여줍니다.</p>
         </div>
-        <div class="card-grid">
-          <article class="card reveal">
-            <div class="card-number">01</div>
+        <div class="bento-grid">
+          <article class="bento-card large reveal">
+            <div class="bento-icon">01</div>
             <h3>Web ERP Development</h3>
-            <p>입고, 출고, 재고, 물류, 업무관리 등 실무 프로세스 기반의 ERP 시스템을 개발합니다.</p>
-            <p>사용자가 실제로 업무에 적용할 수 있는 구조 중심 설계를 중요하게 생각합니다.</p>
+            <p>입고, 출고, 재고, 물류, 업무관리 등 실무 프로세스 기반 ERP 시스템을 개발합니다. 사용자가 실제로 업무에 적용할 수 있는 구조 중심 설계를 중요하게 생각합니다.</p>
+            <div class="bento-lines">
+              <div class="bento-line" style="--fill: 88%;"></div>
+              <div class="bento-line" style="--fill: 72%;"></div>
+              <div class="bento-line" style="--fill: 81%;"></div>
+            </div>
           </article>
-          <article class="card reveal">
-            <div class="card-number">02</div>
+
+          <article class="bento-card medium reveal">
+            <div class="bento-icon">02</div>
             <h3>Database Architecture</h3>
-            <p>MySQL, MariaDB, PostgreSQL 기반으로 데이터 구조를 설계합니다.</p>
-            <p>업무 데이터를 안정적으로 저장하고 분석 가능한 형태로 구성합니다.</p>
+            <p>MySQL, MariaDB, PostgreSQL 기반으로 데이터 구조를 설계하고 업무 데이터를 안정적으로 저장하며 분석 가능한 형태로 구성합니다.</p>
+            <div class="system-map">
+              <div class="system-node erp">ERP</div>
+              <div class="system-node db">Schema</div>
+              <div class="system-node ui">UI</div>
+              <div class="system-node ai">Agent</div>
+              <div class="system-link a"></div>
+              <div class="system-link b"></div>
+              <div class="system-link c"></div>
+            </div>
           </article>
-          <article class="card reveal">
-            <div class="card-number">03</div>
+
+          <article class="bento-card small reveal">
+            <div class="bento-icon">03</div>
             <h3>Graphic Analysis Program</h3>
-            <p>데이터를 시각적으로 분석할 수 있는 프로그램을 설계하고 구현합니다.</p>
-            <p>그래프, 대시보드, 시계열 데이터, 상태 모니터링 UI 구성에 집중합니다.</p>
+            <p>그래프, 대시보드, 시계열 데이터, 상태 모니터링 UI를 설계하고 구현합니다.</p>
           </article>
-          <article class="card reveal">
-            <div class="card-number">04</div>
+
+          <article class="bento-card small reveal">
+            <div class="bento-icon">04</div>
+            <h3>Visualization UI</h3>
+            <p>복잡한 데이터와 상태 정보를 직관적인 인터페이스로 변환합니다.</p>
+          </article>
+
+          <article class="bento-card wide reveal">
+            <div class="bento-icon">05</div>
             <h3>Automation &amp; Digital Twin</h3>
-            <p>Docker, FastAPI, Python UI, 데이터 시각화, 디지털 트윈 기반 자동화 시스템을 설계합니다.</p>
-            <p>AI Agent와 연동 가능한 업무 자동화 구조를 연구합니다.</p>
+            <p>Docker, FastAPI, Python UI, 데이터 시각화, 디지털 트윈 기반 자동화 시스템을 설계합니다. AI Agent와 연동 가능한 업무 자동화 구조를 연구하며, 로컬 환경 중심의 생산성 도구로 확장하는 방향을 지향합니다.</p>
+            <div class="bento-lines">
+              <div class="bento-line" style="--fill: 76%;"></div>
+              <div class="bento-line" style="--fill: 92%;"></div>
+            </div>
           </article>
         </div>
       </div>
@@ -972,25 +1337,34 @@
 
     <section class="section" id="philosophy">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Philosophy</span>
-          <h2>Development Philosophy</h2>
+        <div class="section-head reveal">
+          <div class="section-kicker">Operating Philosophy</div>
+          <h2>개발 철학과 개발 성향을 분리하지 않고 하나의 운영 논리로 정리했습니다.</h2>
         </div>
-        <div class="philosophy-grid">
-          <article class="philosophy-card reveal">
-            <div class="philosophy-number">1</div>
-            <h3>복잡한 업무를 단순한 흐름으로 정리한다.</h3>
-            <p>실무의 복잡성을 분석해 운영 가능한 절차와 화면 구조로 변환합니다.</p>
-          </article>
-          <article class="philosophy-card reveal">
-            <div class="philosophy-number">2</div>
-            <h3>흩어진 데이터를 연결 가능한 구조로 만든다.</h3>
-            <p>데이터를 저장하는 것을 넘어, 검색과 분석이 가능한 시스템으로 정리합니다.</p>
-          </article>
-          <article class="philosophy-card reveal">
-            <div class="philosophy-number">3</div>
-            <h3>시각화를 통해 시스템의 상태를 직관적으로 이해하게 한다.</h3>
-            <p>숫자와 로그를 사용자가 바로 해석할 수 있는 UI로 바꾸는 데 집중합니다.</p>
+        <div class="manifesto-grid">
+          <div class="manifesto-stack">
+            <article class="manifesto-card reveal">
+              <div class="manifesto-number">1</div>
+              <h3>복잡한 업무를 단순한 흐름으로 정리한다.</h3>
+              <p>실무의 복잡성을 분석해 운영 가능한 절차와 화면 구조로 변환합니다.</p>
+            </article>
+            <article class="manifesto-card reveal">
+              <div class="manifesto-number">2</div>
+              <h3>흩어진 데이터를 연결 가능한 구조로 만든다.</h3>
+              <p>저장만 되는 데이터가 아니라 검색과 분석, 자동화까지 이어질 수 있는 구조를 설계합니다.</p>
+            </article>
+            <article class="manifesto-card reveal">
+              <div class="manifesto-number">3</div>
+              <h3>시각화를 통해 시스템 상태를 직관적으로 이해하게 한다.</h3>
+              <p>숫자와 로그를 현장에서 바로 읽을 수 있는 화면과 그래픽 도구로 바꾸는 데 집중합니다.</p>
+            </article>
+          </div>
+          <article class="manifesto-card reveal">
+            <div class="meta">ENTJ Developer Mindset</div>
+            <h3 style="margin-top: 14px;">개발 스타일을 설명하는 보조 정보로서의 ENTJ</h3>
+            <p>목표를 먼저 정의하고, 시스템의 전체 구조를 먼저 설계한 뒤, 실행 가능한 계획으로 빠르게 전환합니다.</p>
+            <p>비즈니스 요구사항과 기술 구현 사이의 간극을 줄이는 것을 중요하게 생각하며, 단순한 기능 구현보다 실제 운영 가능한 구조를 더 높은 우선순위에 둡니다.</p>
+            <p>문제를 기능 단위로만 보지 않고, 역할, 데이터, 흐름으로 나눠 구조화해 해결 경로를 명확하게 만듭니다.</p>
           </article>
         </div>
       </div>
@@ -998,69 +1372,97 @@
 
     <section class="section" id="stack">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Technology Stack</span>
-          <h2>기술 스택</h2>
-          <p class="lead">백엔드, 데이터베이스, UI, 인프라, 시각화 도구를 실무 관점에서 조합합니다.</p>
+        <div class="section-head reveal">
+          <div class="section-kicker">Technology Stack</div>
+          <h2>기술 스택은 단순 나열이 아니라 역할에 따라 보이도록 분해했습니다.</h2>
         </div>
-        <div class="stack-tags reveal">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-          <span class="tag">Python</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">PyQt</span>
-          <span class="tag">PostgreSQL</span>
-          <span class="tag">MySQL</span>
-          <span class="tag">MariaDB</span>
-          <span class="tag">TimescaleDB</span>
-          <span class="tag">Docker</span>
-          <span class="tag">Grafana</span>
-          <span class="tag">REST API</span>
-          <span class="tag">Data Visualization</span>
-          <span class="tag">ERP System</span>
-          <span class="tag">Digital Twin</span>
-          <span class="tag">AI Agent</span>
+        <div class="stack-board">
+          <article class="stack-panel reveal">
+            <div class="meta">Frontend / UI</div>
+            <p>웹 화면, 인터랙션, 분석 인터페이스를 구성하는 영역</p>
+            <div class="stack-pills">
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>PyQt</span>
+              <span>Data Visualization</span>
+            </div>
+          </article>
+          <article class="stack-panel reveal">
+            <div class="meta">Backend / API</div>
+            <p>업무 로직과 자동화를 처리하는 백엔드 및 통신 영역</p>
+            <div class="stack-pills">
+              <span>Python</span>
+              <span>FastAPI</span>
+              <span>REST API</span>
+              <span>AI Agent</span>
+            </div>
+          </article>
+          <article class="stack-panel reveal">
+            <div class="meta">Database</div>
+            <p>업무 데이터를 안정적으로 저장하고 분석 가능한 기반을 만드는 영역</p>
+            <div class="stack-pills">
+              <span>PostgreSQL</span>
+              <span>MySQL</span>
+              <span>MariaDB</span>
+              <span>TimescaleDB</span>
+            </div>
+          </article>
+          <article class="stack-panel reveal">
+            <div class="meta">Infrastructure / Domain</div>
+            <p>개발 환경, 모니터링, 현장 연결성을 구성하는 영역</p>
+            <div class="stack-pills">
+              <span>Docker</span>
+              <span>Grafana</span>
+              <span>ERP System</span>
+              <span>Digital Twin</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section" id="direction">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Project Direction</span>
-          <h2>What I’m Building</h2>
+        <div class="section-head reveal">
+          <div class="section-kicker">What I'm Building</div>
+          <h2>현재 지향하는 개발 방향을 로드맵 카드 형태로 재구성했습니다.</h2>
         </div>
-        <div class="timeline">
-          <article class="timeline-item reveal">
-            <div class="meta">01</div>
-            <h3 style="margin-top: 12px;">실무형 웹 ERP</h3>
+        <div class="roadmap-grid">
+          <article class="roadmap-card span-2 reveal">
+            <div class="roadmap-step">01</div>
+            <h3>실무형 웹 ERP</h3>
             <p>현장의 프로세스를 기준으로 설계된 웹 기반 업무 시스템을 구축합니다.</p>
           </article>
-          <article class="timeline-item reveal">
-            <div class="meta">02</div>
-            <h3 style="margin-top: 12px;">데이터베이스 기반 업무 자동화</h3>
+          <article class="roadmap-card span-2 reveal">
+            <div class="roadmap-step">02</div>
+            <h3>데이터베이스 기반 업무 자동화</h3>
             <p>반복 업무를 줄이고 운영 데이터를 일관되게 관리할 수 있는 구조를 만듭니다.</p>
           </article>
-          <article class="timeline-item reveal">
-            <div class="meta">03</div>
-            <h3 style="margin-top: 12px;">그래픽 분석 프로그램</h3>
+          <article class="roadmap-card span-2 reveal">
+            <div class="roadmap-step">03</div>
+            <h3>그래픽 분석 프로그램</h3>
             <p>복잡한 데이터를 직관적으로 분석할 수 있는 그래픽 기반 도구를 개발합니다.</p>
           </article>
-          <article class="timeline-item reveal">
-            <div class="meta">04</div>
-            <h3 style="margin-top: 12px;">3D 모델 경량화 및 디지털 트윈</h3>
+          <article class="roadmap-card span-3 reveal">
+            <div class="roadmap-step">04</div>
+            <h3>3D 모델 경량화 및 디지털 트윈</h3>
             <p>운영 정보와 시각 모델을 연결해 현장 상태를 더 잘 이해할 수 있는 기반을 고민합니다.</p>
           </article>
-          <article class="timeline-item reveal">
-            <div class="meta">05</div>
-            <h3 style="margin-top: 12px;">AI Agent 기반 개발 자동화 시스템</h3>
+          <article class="roadmap-card span-3 reveal">
+            <div class="roadmap-step">05</div>
+            <h3>AI Agent 기반 개발 자동화 시스템</h3>
             <p>개발과 운영 과정의 반복 작업을 줄이는 실용적인 에이전트 활용 방식을 연구합니다.</p>
           </article>
-          <article class="timeline-item reveal">
-            <div class="meta">06</div>
-            <h3 style="margin-top: 12px;">로컬 환경 중심의 생산성 도구</h3>
+          <article class="roadmap-card span-3 reveal">
+            <div class="roadmap-step">06</div>
+            <h3>로컬 환경 중심의 생산성 도구</h3>
             <p>개발자가 직접 제어하고 확장할 수 있는 생산성 중심 툴체인을 지향합니다.</p>
+          </article>
+          <article class="roadmap-card span-3 reveal">
+            <div class="roadmap-step">07</div>
+            <h3>Connected Operations</h3>
+            <p>비즈니스 로직, 데이터, 시각화를 한 흐름으로 묶는 운영형 플랫폼을 지향합니다.</p>
           </article>
         </div>
       </div>
@@ -1068,41 +1470,30 @@
 
     <section class="section" id="mindset">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Personality</span>
-          <h2>ENTJ Developer Mindset</h2>
-          <p class="lead">MBTI는 보조적인 표현으로만 사용하되, 개발 스타일의 방향성을 설명하는 데 반영했습니다.</p>
+        <div class="section-head reveal">
+          <div class="section-kicker">Mindset Signals</div>
+          <h2>성향을 카드 다섯 장으로 압축해 개발 스타일의 신호처럼 보이게 구성했습니다.</h2>
         </div>
         <div class="mindset-grid">
-          <article class="mindset-item reveal">
+          <article class="mindset-card reveal">
             <div class="meta">Focus 01</div>
-            <h3 style="margin-top: 12px;">목표를 먼저 정의한다.</h3>
-            <p>방향이 분명해야 구조와 일정이 효율적으로 정리된다고 생각합니다.</p>
+            <p>목표를 먼저 정의하고 방향이 분명한 상태에서 구조를 설계합니다.</p>
           </article>
-          <article class="mindset-item reveal">
+          <article class="mindset-card reveal">
             <div class="meta">Focus 02</div>
-            <h3 style="margin-top: 12px;">시스템의 전체 구조를 먼저 설계한다.</h3>
-            <p>기능 단위보다 데이터 흐름과 운영 관점의 연결을 먼저 봅니다.</p>
+            <p>시스템의 전체 구조와 데이터 흐름을 먼저 본 뒤 기능을 세분화합니다.</p>
           </article>
-          <article class="mindset-item reveal">
+          <article class="mindset-card reveal">
             <div class="meta">Focus 03</div>
-            <h3 style="margin-top: 12px;">실행 가능한 계획으로 빠르게 전환한다.</h3>
-            <p>아이디어를 바로 검증 가능한 구조와 작업 단위로 바꾸는 편입니다.</p>
+            <p>실행 가능한 계획으로 빠르게 전환하고 바로 검증 가능한 단위로 나눕니다.</p>
           </article>
-          <article class="mindset-item reveal">
+          <article class="mindset-card reveal">
             <div class="meta">Focus 04</div>
-            <h3 style="margin-top: 12px;">비즈니스와 기술의 간극을 줄인다.</h3>
-            <p>요구사항을 개발 언어로 번역하는 과정에서 실무 적합성을 최우선으로 둡니다.</p>
+            <p>비즈니스 요구사항과 기술 구현 사이의 간극을 줄이는 데 집중합니다.</p>
           </article>
-          <article class="mindset-item reveal">
+          <article class="mindset-card reveal">
             <div class="meta">Focus 05</div>
-            <h3 style="margin-top: 12px;">운영 가능한 구조를 더 중요하게 본다.</h3>
-            <p>단순한 기능 구현보다 유지와 확장이 가능한 형태를 선호합니다.</p>
-          </article>
-          <article class="mindset-item reveal">
-            <div class="meta">Focus 06</div>
-            <h3 style="margin-top: 12px;">문제를 구조화해 해결한다.</h3>
-            <p>복잡한 이슈를 역할, 데이터, 흐름으로 나눠 해결 경로를 명확히 합니다.</p>
+            <p>단순한 기능보다 실제 운영과 유지보수가 가능한 구조를 우선합니다.</p>
           </article>
         </div>
       </div>
@@ -1110,41 +1501,40 @@
 
     <section class="section" id="contact">
       <div class="container">
-        <div class="section-header reveal">
-          <span class="eyebrow">Contact</span>
-          <h2>Let’s build practical systems that work in the real world.</h2>
-          <p class="lead">실제 업무에서 작동하는 시스템을 함께 만들고 싶습니다.</p>
-        </div>
         <div class="contact-grid">
-          <article class="contact-card reveal">
-            <div class="meta">Contact</div>
-            <h3 style="margin-top: 12px;">협업 및 문의</h3>
-            <p>업무 시스템, 데이터 구조, 분석 도구, 자동화 개발과 관련된 협업을 제안할 수 있습니다.</p>
-            <strong>
-              <!-- Replace this email address with your real contact email -->
-              your-email@example.com
-            </strong>
-          </article>
-          <article class="contact-card reveal">
-            <div class="meta">Action</div>
-            <h3 style="margin-top: 12px;">바로 이동</h3>
-            <div class="cta-row" style="margin-top: 18px;">
+          <article class="contact-panel hero-contact reveal">
+            <div class="section-kicker">Contact</div>
+            <h2>Let’s build practical systems that work in the real world.</h2>
+            <p>실제 업무에서 작동하는 시스템을 함께 만들고 싶습니다.</p>
+            <p>비즈니스 로직을 시스템으로 만들고, 데이터를 시각화하며, 실제 운영 가능한 도구로 완성하는 개발자라는 방향으로 협업하고 있습니다.</p>
+            <div class="contact-actions">
               <a class="button button-primary" href="mailto:your-email@example.com">Contact</a>
               <a class="button button-secondary" href="#top">Portfolio</a>
             </div>
           </article>
-          <article class="contact-card reveal">
-            <div class="meta">Message</div>
-            <h3 style="margin-top: 12px;">Core Concept</h3>
-            <p>비즈니스 로직을 시스템으로 만들고, 데이터를 시각화하며, 실제 운영 가능한 도구로 완성하는 개발자.</p>
-          </article>
+          <div class="contact-mini">
+            <article class="contact-panel reveal">
+              <div class="meta">Contact Email</div>
+              <h3 style="margin-top: 12px;">협업 및 문의</h3>
+              <p>업무 시스템, 데이터 구조, 분석 도구, 자동화 개발과 관련된 협업을 제안할 수 있습니다.</p>
+              <p>
+                <!-- Replace this email address with your real contact email -->
+                your-email@example.com
+              </p>
+            </article>
+            <article class="contact-panel reveal">
+              <div class="meta">Core Concept</div>
+              <h3 style="margin-top: 12px;">실무 중심의 시스템 설계자</h3>
+              <p>비즈니스, 데이터, 시각화를 연결해 운영 가능한 소프트웨어로 완성하는 방향을 지향합니다.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container">Martin Choi Portfolio Page | Web ERP, Database, Analytics, and Practical System Design</div>
+    <div class="container">Martin Choi Portfolio Page | Web ERP, Database, Analytics, Digital Twin, and Practical System Design</div>
   </footer>
 
   <script>
@@ -1157,7 +1547,7 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.18 });
+    }, { threshold: 0.16 });
 
     revealItems.forEach((item) => observer.observe(item));
   </script>
